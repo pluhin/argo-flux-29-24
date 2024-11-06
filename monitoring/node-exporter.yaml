@@ -130,6 +130,9 @@ metadata:
     app.kubernetes.io/version: 1.8.2
   name: node-exporter
   namespace: monitoring
+  annotations:
+      prometheus.io/scrape: 'true'
+      prometheus.io/port:   '9100'
 spec:
   clusterIP: None
   ports:
