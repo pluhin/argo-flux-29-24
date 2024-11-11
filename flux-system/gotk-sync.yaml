@@ -13,6 +13,15 @@ spec:
     name: flux-system
   url: https://github.com/pluhin/argo-flux-29-24.git
 ---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: grafana
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: https://grafana.github.io/helm-charts
+---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
